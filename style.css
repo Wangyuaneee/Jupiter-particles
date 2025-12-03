@@ -1,0 +1,79 @@
+:root {
+    --bg-start: #03050a;
+    --bg-end: #0a0f1b;
+    --text: #e6e6e6;
+    --accent: #9dfffd;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: #000000;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Segoe UI Emoji";
+    color: var(--text);
+}
+
+#app {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#scene {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#webcam {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.ui {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ui button {
+    appearance: none;
+    border: 0;
+    outline: 0;
+    padding: 10px 16px;
+    border-radius: 12px;
+    color: #0c1017;
+    background: linear-gradient(180deg, #ffffff, #d7fbff);
+    box-shadow:
+        0 10px 30px rgba(157, 255, 253, 0.25),
+        inset 0 0 0 1px rgba(157, 255, 253, 0.5);
+    font-weight: 600;
+    letter-spacing: .02em;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .2s ease;
+}
+
+.ui button:hover {
+    transform: translateY(-1px);
+}
+
+.ui button:active {
+    transform: translateY(1px);
+}
