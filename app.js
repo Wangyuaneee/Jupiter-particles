@@ -304,10 +304,8 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-(async function start() {
-    await initCamera();
-    initHands();
-    // 星空背景
+(function start() {
+    // 星空背景先行，避免等待摄像头导致黑屏
     (function addStarfield() {
         const count = 12000, radius = 1200;
         const pos = new Float32Array(count * 3);
@@ -332,5 +330,9 @@ function animate() {
         scene.add(pts);
     })();
     animate();
+    // 摄像头与手势延迟初始化，失败则忽略
+    initCamera()
+        .then(() => { initHands(); })
+        .catch(() => { /* 摄像头不可用时继续运行，无手势控制 */ });
 })();
 
