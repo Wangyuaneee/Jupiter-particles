@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Three.js 交互式土星粒子系统</title>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <canvas id="scene"></canvas>
+
+        <div class="ui">
+            <button id="fullscreen">全屏</button>
+        </div>
+
+        <video id="webcam" autoplay playsinline muted></video>
+    </div>
+
+    <!-- MediaPipe Hands (手势检测) -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+    <!-- Three.js 应用脚本 -->
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
